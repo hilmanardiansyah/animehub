@@ -45,4 +45,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    // app/Models/User.php
+    public function reviews()
+    {
+        return $this->hasMany(\App\Models\Review::class);
+    }
+
+    public function watchlists()
+    {
+        return $this->hasMany(\App\Models\Watchlist::class);
+    }
+
 }
